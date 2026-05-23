@@ -6,105 +6,53 @@ app = Flask(__name__)
 def home():
     return """
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>APK HUB</title>
 
-<style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<style>
 
 body{
     background:#0d0d0d;
     color:white;
-    font-family:Arial,sans-serif;
-}
-
-.header{
+    font-family:Arial;
     text-align:center;
-    padding:40px 20px;
+    padding:40px;
 }
 
-.header h1{
-    font-size:45px;
+h1{
     color:#00ff99;
-    margin-bottom:10px;
-}
-
-.header p{
-    color:gray;
-    font-size:14px;
-}
-
-.container{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
+    font-size:45px;
 }
 
 .card{
-    width:320px;
     background:#1a1a1a;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 0 20px rgba(0,255,153,0.15);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.info{
     padding:20px;
-    text-align:center;
+    border-radius:20px;
+    max-width:320px;
+    margin:auto;
+    margin-top:40px;
+    box-shadow:0 0 20px rgba(0,255,153,0.2);
 }
 
-.info h2{
-    margin-bottom:10px;
-}
-
-.size{
-    color:#00ff99;
-    margin-bottom:20px;
+img{
+    width:100%;
+    border-radius:15px;
 }
 
 .btn{
     display:inline-block;
-    text-decoration:none;
+    margin-top:20px;
     background:#00ff99;
     color:black;
-    padding:14px 24px;
-    border-radius:14px;
+    padding:14px 25px;
+    border-radius:12px;
+    text-decoration:none;
     font-weight:bold;
-    transition:0.3s;
-}
-
-.btn:hover{
-    opacity:0.8;
-}
-
-.footer{
-    text-align:center;
-    padding:30px;
-    color:gray;
-    font-size:14px;
 }
 
 </style>
@@ -113,25 +61,19 @@ body{
 
 <body>
 
-<div class="header">
-    <h1>🔥 APK HUB 🔥</h1>
-    <p>Hosted from a phone with dangerous confidence 💀</p>
-</div>
-
-<div class="container">
+<h1>🔥 APK HUB 🔥</h1>
 
 <div class="card">
 
 <img src="https://f-droid.org/repo/icons-640/org.fdroid.fdroid.png">
 
-<div class="info">
+<h2>F-Droid APK</h2>
 
-<h2>F-Droid</h2>
-
-<p class="size">11 MB</p>
+<p>11 MB</p>
 
 <a class="btn"
-href="https://drive.usercontent.google.com/download?id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr&export=download&confirm=t">
+href="https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr"
+download>
 
 Download APK
 
@@ -139,15 +81,12 @@ Download APK
 
 </div>
 
-</div>
-
-</div>
-
-<div class="footer">
-Direct APK download working 😭🔥
-</div>
+<p style="margin-top:40px;color:gray;">
+Direct APK download 😭🔥
+</p>
 
 </body>
+
 </html>
 """
 
