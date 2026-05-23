@@ -131,7 +131,7 @@ body{
 <p class="size">11 MB</p>
 
 <a class="btn"
-href="https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr">
+href="https://drive.usercontent.google.com/download?id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr&export=download&confirm=t">
 
 Download APK
 
@@ -144,7 +144,7 @@ Download APK
 </div>
 
 <div class="footer">
-Made using Flask + Render + Google Drive 😭🔥
+Direct APK download working 😭🔥
 </div>
 
 </body>
