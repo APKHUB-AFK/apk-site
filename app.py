@@ -1,40 +1,99 @@
-from flask import Flask, request, render_template_string, send_from_directory
-import os
+from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = "/tmp/uploads"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+apps = [
+    {
+        "name": "Minecraft Premium",
+        "image": "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png",
+        "link": "PASTE_GOOGLE_DRIVE_LINK_HERE"
+    },
+    {
+        "name": "Spotify Premium",
+        "image": "https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png",
+        "link": "PASTE_GOOGLE_DRIVE_LINK_HERE"
+    }
+]
 
 HTML = """
 <!DOCTYPE html>
 <html>
 <head>
-    <title>APK HUB</title>
+<title>APK HUB</title>
+
+<style>
+
+body{
+    background:#0f0f0f;
+    color:white;
+    font-family:Arial;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    color:#00ff99;
+}
+
+.container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1b1b1b;
+    border-radius:20px;
+    padding:15px;
+    text-align:center;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.card img{
+    width:100%;
+    border-radius:15px;
+    height:200px;
+    object-fit:cover;
+}
+
+button{
+    background:#00ff99;
+    border:none;
+    padding:12px 20px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:10px;
+}
+
+button:hover{
+    opacity:0.8;
+}
+
+</style>
+
 </head>
-<body style="font-family: Arial; background:#111; color:white; padding:20px;">
 
-<h1>🔥 APK HUB</h1>
+<body>
 
-<h2>Upload APK</h2>
+<h1>🔥 APK HUB 🔥</h1>
 
-<form action="/upload" method="post" enctype="multipart/form-data">
-    <input type="file" name="file">
-    <button type="submit">Upload</button>
-</form>
+<div class="container">
 
-<h2>Available APKs</h2>
+{% for app in apps %}
 
-<ul>
-{% for file in files %}
-<li style="margin:10px 0;">
-    {{ file }}
-    <a href="/download/{{ file }}">
-        <button>Download</button>
+<div class="card">
+    <img src="{{ app.image }}">
+    <h2>{{ app.name }}</h2>
+
+    <a href="{{ app.link }}">
+        <button>Download APK</button>
     </a>
-</li>
+</div>
+
 {% endfor %}
-</ul>
+
+</div>
 
 </body>
 </html>
@@ -42,30 +101,7 @@ HTML = """
 
 @app.route("/")
 def home():
-    files = os.listdir(UPLOAD_FOLDER)
-    return render_template_string(HTML, files=files)
-
-@app.route("/upload", methods=["POST"])
-def upload():
-    file = request.files["file"]
-
-    if file and file.filename.endswith(".apk"):
-        file.save(os.path.join(UPLOAD_FOLDER, file.filename))
-
-    return """
-    <h2 style='color:white;background:black;padding:20px;'>
-    APK Uploaded 😄🔥<br><br>
-    <a href='/'>Go Back</a>
-    </h2>
-    """
-
-@app.route("/download/<filename>")
-def download(filename):
-    return send_from_directory(
-        UPLOAD_FOLDER,
-        filename,
-        as_attachment=True
-    )
+    return render_template_string(HTML, apps=apps)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=10000)
