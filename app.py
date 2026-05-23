@@ -53,6 +53,8 @@ img{
     border-radius:12px;
     text-decoration:none;
     font-weight:bold;
+    border:none;
+    cursor:pointer;
 }
 
 </style>
@@ -71,19 +73,26 @@ img{
 
 <p>11 MB</p>
 
-<a class="btn"
-href="https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr"
-download>
-
+<button class="btn" onclick="downloadAPK()">
 Download APK
-
-</a>
+</button>
 
 </div>
 
 <p style="margin-top:40px;color:gray;">
 Direct APK download 😭🔥
 </p>
+
+<script>
+
+function downloadAPK() {
+
+window.location.href =
+"https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr";
+
+}
+
+</script>
 
 </body>
 
