@@ -6,7 +6,7 @@ apps = [
     {
         "name": "F-DROID",
         "image": "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png",
-        "link": "https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr""
+        "link": "https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr"
     },
     {
         "name": "Spotify Premium",
