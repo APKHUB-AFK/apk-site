@@ -5,9 +5,27 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return """
-    <h1 style='color:lime;text-align:center;margin-top:100px;'>
-    APK HUB WORKING 😭🔥
-    </h1>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>APK HUB</title>
+    </head>
+
+    <body style="background:black;color:lime;text-align:center;padding-top:100px;font-family:Arial;">
+
+        <h1>🔥 APK HUB 🔥</h1>
+
+        <a href="https://drive.google.com/uc?export=download&id=1uN5VEs9SV_oHuVXt5r6hi-12DKibvsvr">
+
+            <button style="padding:20px;font-size:20px;">
+            Download F-Droid
+            </button>
+
+        </a>
+
+    </body>
+    </html>
     """
 
-app.run(host="0.0.0.0", port=10000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=10000)
