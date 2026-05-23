@@ -14,56 +14,63 @@ apps = [
 HTML = """
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>APK HUB</title>
-
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>APK HUB</title>
 
 <style>
 
-body{
+*{
     margin:0;
     padding:0;
+    box-sizing:border-box;
+}
+
+body{
     background:#0d0d0d;
-    color:white;
     font-family:Arial,sans-serif;
+    color:white;
 }
 
 .header{
     text-align:center;
-    padding:30px 20px;
+    padding:40px 20px;
 }
 
 .header h1{
+    font-size:42px;
     color:#00ff99;
-    font-size:40px;
     margin-bottom:10px;
 }
 
 .header p{
     color:gray;
+    font-size:15px;
 }
 
 .container{
     display:flex;
     justify-content:center;
+    align-items:center;
     padding:20px;
 }
 
 .card{
+    width:320px;
     background:#1a1a1a;
-    width:300px;
     border-radius:25px;
     overflow:hidden;
-    box-shadow:0 0 25px rgba(0,255,153,0.2);
+    box-shadow:0 0 20px rgba(0,255,153,0.15);
     transition:0.3s;
 }
 
 .card:hover{
-    transform:scale(1.03);
+    transform:translateY(-5px);
 }
 
 .card img{
@@ -78,7 +85,7 @@ body{
 }
 
 .info h2{
-    margin-top:0;
+    margin-bottom:10px;
 }
 
 .size{
@@ -86,25 +93,25 @@ body{
     margin-bottom:20px;
 }
 
-.download-btn{
+.btn{
     display:inline-block;
+    text-decoration:none;
     background:#00ff99;
     color:black;
-    text-decoration:none;
-    padding:14px 25px;
-    border-radius:15px;
+    padding:14px 24px;
+    border-radius:14px;
     font-weight:bold;
     transition:0.3s;
 }
 
-.download-btn:hover{
+.btn:hover{
     opacity:0.8;
 }
 
 .footer{
     text-align:center;
-    color:gray;
     padding:30px;
+    color:gray;
     font-size:14px;
 }
 
@@ -116,7 +123,7 @@ body{
 
 <div class="header">
     <h1>🔥 APK HUB 🔥</h1>
-    <p>Hosted with pure chaos engineering 💀</p>
+    <p>Hosted from a phone with dangerous confidence 💀</p>
 </div>
 
 <div class="container">
@@ -133,7 +140,7 @@ body{
 
 <p class="size">{{ app.size }}</p>
 
-<a class="download-btn" href="{{ app.link }}">
+<a class="btn" href="{{ app.link }}">
 Download APK
 </a>
 
@@ -146,7 +153,7 @@ Download APK
 </div>
 
 <div class="footer">
-Made with Flask + Render + Google Drive 😭🔥
+Made using Flask + Render + Google Drive 😭🔥
 </div>
 
 </body>
