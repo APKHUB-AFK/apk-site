@@ -10,7 +10,7 @@ def home():
 
 <head>
 
-<title>njan shebin njan makkandiyilanu</title>
+<title>I am Shebin from Makkandi hi Mammukka</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -69,7 +69,7 @@ img{
 
 <img src="https://f-droid.org/repo/icons-640/org.fdroid.fdroid.png">
 
-<h2>F-Droid APK</h2>
+<h2>I am Shebin from Makkandi hi Mammukka</h2>
 
 <p>11 MB</p>
 
